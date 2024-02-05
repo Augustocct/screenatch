@@ -1,30 +1,44 @@
 package br.com.geckel;
 
 public class Filme {
-    String nome;
-    int anoDeLancamento;
-    boolean incluidoNoPlano;
+    private String nome;
+    private int anoDeLancamento;
+    private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int TotalDeAvaliacoes;
-    int duracaoEmMinutos;
+    private int duracaoEmMinutos;
 
-    int getTotalDeAvaliacoes(){
+    public void setAnoDeLancamento(int anoDeLancamento) {
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public void setIncluidoNoPlano(boolean incluidoNoPlano) {
+        this.incluidoNoPlano = incluidoNoPlano;
+    }
+
+    public void setDuracaoEmMinutos(int duracaoEmMinutos) {
+        this.duracaoEmMinutos = duracaoEmMinutos;
+    }
+
+    public int getTotalDeAvaliacoes() {
         return TotalDeAvaliacoes;
     }
-    
-    void exibeFichaTecnica(){
+
+    public void setName(String nome) {
+        this.nome = nome;
+    }
+
+    public void exibeFichaTecnica() {
         System.out.println("Nome do filme: " + nome);
-        System.out.println("Total de avaliações: " + TotalDeAvaliacoes);
         System.out.println("Duração em minutos: " + duracaoEmMinutos);
     }
 
-    void avalia(double nota){
+    public void avalia(double nota) {
         somaDasAvaliacoes += nota;
         TotalDeAvaliacoes++;
     }
 
-    double pegaMedia(){
-        return somaDasAvaliacoes / TotalDeAvaliacoes;   
+    public double pegaMedia() {
+        return somaDasAvaliacoes / TotalDeAvaliacoes;
     }
 }
-
