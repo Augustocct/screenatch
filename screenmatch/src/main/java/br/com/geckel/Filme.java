@@ -1,6 +1,6 @@
 package br.com.geckel;
 
-public class Filme extends Titulo{
+public class Filme extends Titulo implements Classificavel{
     private String diretor;
 
     public String getDiretor() {
@@ -11,5 +11,7 @@ public class Filme extends Titulo{
         this.diretor = diretor;
     }
 
-    
+    public int getClassificacao(){
+        return (int) pegaMedia() / 2;
+    }
 }
